@@ -9,5 +9,5 @@ repos:
       rev: ''  # Use the sha / tag you want to point at
       hooks:
       -   id: mypy
-          args: [--strict, --ignore-missing-imports]
-          additional_dependencies: [tokenize-rt==3.2.0]
+          args: [--strict, --ignore-missing-imports, --explicit-package-bases]
+          additional_dependencies: [tokenize-rt==3.2.0, pydantic, fastapi]
