@@ -18,10 +18,8 @@ def load_model() -> Any:
     return model
 
 
-def calculate_embeddings(
-    sentence: dict[str, Any], transformer: SentenceTransformer
-) -> np.ndarray:
-    embeddings = transformer.encode(str(sentence))
+def calculate_embeddings(sentence: str, transformer: SentenceTransformer) -> np.ndarray:
+    embeddings = transformer.encode(sentence)
     return embeddings
 
 

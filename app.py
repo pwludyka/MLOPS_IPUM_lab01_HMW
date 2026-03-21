@@ -16,7 +16,7 @@ app = FastAPI()
 
 @app.post("/predict")
 def Predict(sentence: PredictRequest) -> PredictResponse:
-    embeddings = calculate_embeddings(sentence.model_dump(), sentence_transformer)
+    embeddings = calculate_embeddings(sentence.text, sentence_transformer)
     embeddings_arr = np.array(embeddings).reshape(1, -1)
     sentiment = calculate_sentiment(embeddings_arr, model)
     return PredictResponse(prediction=sentiment)
